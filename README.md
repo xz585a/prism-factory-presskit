@@ -99,6 +99,11 @@ gh release upload assets downloads/PrismFactory_PressKit.zip --clobber
 **公開前に、この2つを Releases へ上げておくこと。**ページ上のトレーラーと
 一括ダウンロードのリンク先がこの URL なので、上げるまでは 404 になる。
 
+**手元で開いたときだけは、トレーラーが `assets/video/` から再生される。**
+`index.html` の末尾に、`localhost` と `file://` でだけ `src` を差し替える数行を入れてある。
+Releases がまだ空の状態でも、ページの見え方を確認できる。
+**GitHub Pages 上では効かない**（`assets/video/` は Git 管理外なので存在しない）。
+
 ```bash
 gh release create assets --title assets --notes "press kit assets" || true
 gh release upload assets assets/video/PrismFactory_Trailer.mp4 --clobber

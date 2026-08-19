@@ -504,6 +504,17 @@
     }
   }
 
+  // 手元で開いたとき（localhost / file://）だけ、トレーラーを Git 管理外の
+  // assets/video/ から再生する。公開前は Releases 側がまだ空で 404 になるため。
+  // 公開後の GitHub Pages では動かない ── そちらは Releases の mp4 を見る。
+  (function () {
+    var local = location.hostname === 'localhost' || location.hostname === '127.0.0.1'
+                || location.protocol === 'file:';
+    if (!local) return;
+    var v = document.querySelector('#trailer video');
+    if (v) v.src = 'assets/video/PrismFactory_Trailer.mp4';
+  })();
+
   // 優先順位: 前回の選択 > ブラウザの言語設定 > 英語
   var saved = null;
   try { saved = localStorage.getItem('pf-presskit-lang'); } catch (e) {}
