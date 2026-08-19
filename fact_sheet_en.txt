@@ -1,5 +1,5 @@
 Prism Factory — Fact Sheet (English)
-https://xz585a.github.io/prism-factory-presskit/
+https://store.steampowered.com/app/5114180/
 
 ================================================================
 Fact sheet
@@ -13,7 +13,7 @@ Release:        H1 2027
 Price:          TBA
 Demo:           Planned for September 2026
 Developer:      Nulpoyo (solo)
-Steam:          (store page in preparation — link to follow)
+Steam:          https://store.steampowered.com/app/5114180/
 Press kit:      https://xz585a.github.io/prism-factory-presskit/
 Trailer:        (YouTube link to follow. The mp4 can be downloaded from the press kit page)
 

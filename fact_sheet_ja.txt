@@ -1,5 +1,5 @@
 Prism Factory — ファクトシート（日本語）
-https://xz585a.github.io/prism-factory-presskit/
+https://store.steampowered.com/app/5114180/
 
 ================================================================
 製品情報
@@ -13,7 +13,7 @@ https://xz585a.github.io/prism-factory-presskit/
 価格:           未定
 デモ版:         2026年9月 公開予定
 開発:           Nulpoyo（個人開発）
-Steam:          （ストアページ準備中。公開時に差し替え）
+Steam:          https://store.steampowered.com/app/5114180/
 プレスキット:   https://xz585a.github.io/prism-factory-presskit/
 トレーラー:     （YouTube 公開時に差し替え。mp4 はプレスキットのページからダウンロード可）
 
