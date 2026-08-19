@@ -1,0 +1,514 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Prism Factory — Press Kit</title>
+<meta name="description" content="Press kit for Prism Factory, a factory game about taking one white beam and delivering it as the colour and brightness each order demands.">
+<link rel="icon" href="assets/branding/community_icon_184x184.png">
+<style>
+  :root {
+    --bg: #05070c;
+    --bg-alt: #0d1119;
+    --line: #212a3a;
+    --fg: #e7edf6;
+    --fg-dim: #8e9bb2;
+    --accent: #4fd2f0;
+    --accent-dim: #1d6d82;
+    --radius: 6px;
+    --max: 900px;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--fg);
+    font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Yu Gothic", Meiryo, sans-serif;
+    line-height: 1.75;
+    font-size: 16px;
+  }
+  .wrap { max-width: var(--max); margin: 0 auto; padding: 0 20px; }
+  a { color: var(--accent); }
+  a:hover { color: #8ee6fb; }
+
+  /* ---- 言語切り替え ----
+     JS が動かない場合は両方表示される（body に class が付かないため）。 */
+  body.lang-ja .l-en { display: none; }
+  body.lang-en .l-ja { display: none; }
+
+  /* ---- header ---- */
+  header {
+    border-bottom: 1px solid var(--line);
+    background: linear-gradient(180deg, #0b1119 0%, var(--bg) 100%);
+    padding: 44px 0 36px;
+    text-align: center;
+  }
+  header img.logo { width: 100%; max-width: 420px; height: auto; display: block; margin: 0 auto; }
+  h1 { font-size: 2.1rem; margin: 14px 0 6px; letter-spacing: .04em; }
+  /* ロゴ画像がタイトルを担うので、h1 は読み上げと検索向けに残して視覚的にだけ隠す */
+  .visually-hidden {
+    position: absolute; width: 1px; height: 1px; margin: -1px;
+    padding: 0; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0;
+  }
+  .tagline { color: var(--fg-dim); margin: 0 auto; max-width: 620px; }
+
+  .switch { margin-top: 24px; }
+  .switch button {
+    font: inherit; font-size: .88rem; cursor: pointer;
+    padding: 6px 18px; margin: 0 3px;
+    background: transparent; color: var(--fg-dim);
+    border: 1px solid var(--line); border-radius: var(--radius);
+  }
+  .switch button:hover { border-color: var(--accent-dim); color: var(--fg); }
+  .switch button[aria-pressed="true"] {
+    background: var(--accent); border-color: var(--accent); color: #04121a; font-weight: bold;
+  }
+  .anchors { margin-top: 14px; font-size: .88rem; }
+  .anchors a { margin: 0 9px; text-decoration: none; }
+  .anchors a:hover { text-decoration: underline; }
+
+  /* ---- sections ---- */
+  section { padding: 46px 0; border-bottom: 1px solid var(--line); }
+  h2 { font-size: 1.35rem; margin: 0 0 10px; color: var(--accent); letter-spacing: .03em; }
+  h3 { font-size: 1.02rem; margin: 30px 0 8px; color: var(--fg); }
+  p { margin: 0 0 14px; }
+  ul { margin: 0 0 14px; padding-left: 1.25em; }
+  li { margin-bottom: 5px; }
+  .lead { color: var(--fg-dim); font-size: .93rem; }
+
+  /* ---- fact sheet ---- */
+  table.facts { width: 100%; border-collapse: collapse; font-size: .94rem; }
+  table.facts th, table.facts td {
+    text-align: left; padding: 9px 10px; border-bottom: 1px solid var(--line); vertical-align: top;
+  }
+  table.facts th { color: var(--fg-dim); font-weight: normal; width: 30%; white-space: nowrap; }
+
+  /* ---- buttons ---- */
+  .buttons { display: flex; flex-wrap: wrap; gap: 10px; margin: 22px 0 0; }
+  .btn {
+    display: inline-block; padding: 11px 20px; border-radius: var(--radius);
+    background: var(--accent); color: #04121a; text-decoration: none; font-weight: bold;
+  }
+  .btn:hover { background: #7fe0f7; color: #04121a; }
+  .btn.ghost { background: transparent; color: var(--accent); border: 1px solid var(--accent-dim); }
+  .btn.ghost:hover { background: rgba(79,210,240,.1); color: var(--accent); }
+
+  /* ---- トレーラー ----
+     display は必ずクラス側に置く。インライン style だと言語切り替えの
+     display:none に勝ってしまい、日英2本が同時に出る。
+     iframe には固有の縦横比が無いので、aspect-ratio を外すと潰れる。 */
+  .trailer-player {
+    width: 100%; display: block; background: #000; aspect-ratio: 16 / 9;
+    border: 1px solid var(--line); border-radius: var(--radius);
+  }
+
+  /* ---- media grid ---- */
+  .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 14px; margin-top: 18px; }
+  figure { margin: 0; }
+  figure a { display: block; }
+  figure img, figure video {
+    width: 100%; display: block; border: 1px solid var(--line); border-radius: var(--radius);
+    background: var(--bg-alt);
+  }
+  figcaption { font-size: .82rem; color: var(--fg-dim); margin-top: 6px; }
+
+  /* ---- misc ---- */
+  .note {
+    background: var(--bg-alt); border-left: 3px solid var(--accent-dim);
+    padding: 14px 18px; border-radius: 0 var(--radius) var(--radius) 0; margin: 18px 0;
+    color: var(--fg-dim); font-size: .93rem;
+  }
+  footer { padding: 34px 0 60px; color: var(--fg-dim); font-size: .88rem; text-align: center; }
+
+  @media (max-width: 560px) {
+    h1 { font-size: 1.6rem; }
+    table.facts th { width: 40%; white-space: normal; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <img class="logo" src="assets/branding/logo_1280x720.png" alt="Prism Factory">
+    <h1 class="visually-hidden">Prism Factory</h1>
+    <p class="tagline l-ja">白い光を、注文どおりの色と明るさに加工して届ける工場ゲーム。装置は光を増やさない。分ければ、その分だけ弱くなる。追う数字は1種類しかなく、足りないときに考えることは常に一つ ── どこに余っている光があるか。</p>
+    <p class="tagline l-en">A factory game about taking white light and delivering it as the colour and brightness each order demands. No device creates light; every split costs exactly what it gives. One number to track, and one question when you come up short — where is light going to waste?</p>
+
+    <div class="switch">
+      <button type="button" id="btn-ja" aria-pressed="false">日本語</button>
+      <button type="button" id="btn-en" aria-pressed="false">English</button>
+    </div>
+
+    <nav class="anchors">
+      <span class="l-ja">
+        <a href="#trailer">トレーラー</a><a href="#about">概要</a><a href="#media">素材</a><a href="#downloads">ダウンロード</a><a href="#contact">連絡先</a>
+      </span>
+      <span class="l-en">
+        <a href="#trailer">Trailer</a><a href="#about">About</a><a href="#media">Media</a><a href="#downloads">Downloads</a><a href="#contact">Contact</a>
+      </span>
+    </nav>
+  </div>
+</header>
+
+<!-- ============ トレーラー ============ -->
+<section id="trailer">
+  <div class="wrap">
+    <h2 class="l-ja">トレーラー</h2>
+    <h2 class="l-en">Trailer</h2>
+
+    <!-- 現状は mp4 を Releases から直接再生している。YouTube へ上げたら、この <video> を
+         youtube-nocookie.com/embed/<id> の iframe へ差し替える（class="trailer-player" は
+         そのまま使う）。display はクラス側に置くこと。インライン style だと言語切り替えの
+         display:none に勝ち、2本が同時に出る。
+         映像に文字は入らないので、日英で同じ1本を使う。 -->
+    <div style="margin-top:18px;">
+      <video class="trailer-player" controls preload="none"
+             poster="assets/branding/trailer_poster.png"
+             src="https://github.com/xz585a/prism-factory-presskit/releases/download/assets/PrismFactory_Trailer.mp4"></video>
+    </div>
+
+    <p class="lead l-ja" style="margin-top:12px;">約82秒。字幕は入っていません（映像内の UI は英語表示です）。</p>
+    <p class="lead l-en" style="margin-top:12px;">About 82 seconds, no subtitles. The UI shown in the footage is the English build.</p>
+
+    <div class="buttons">
+      <a class="btn ghost" href="https://github.com/xz585a/prism-factory-presskit/releases/download/assets/PrismFactory_Trailer.mp4" download><span class="l-ja">トレーラー mp4 をダウンロード（20MB）</span><span class="l-en">Download trailer mp4 (20 MB)</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 概要 ============ -->
+<section id="about">
+  <div class="wrap">
+
+    <!-- 日本語 -->
+    <div class="l-ja">
+      <h2>概要</h2>
+      <p>『Prism Factory』は、白い光を注文どおりの色と明るさに加工して届ける工場ゲームです。</p>
+      <p><strong>「黄色い光を、強度5で」。</strong>注文はその形でやってきます。盤面にあるのは光源1つと、まっすぐ進む白いビームだけ。あなたは盤上に光学装置を置いて、ビームを曲げ、割り、混ぜ、注文どおりの光を届け先へ通します。</p>
+      <p><strong>装置は、光を増やしません。</strong>光源が強度8を出しているなら、そこから盤面へ入る光は8です。2本に分ければ4と4。エネルギー保存則が、そのまま資源の制約になっています。電力も、資金も、部品の在庫もありません。<strong>第二の資源を持ち込まないことが、このゲームの設計の中心です。</strong>追う数値が1種類しかないので、盤面に見えているものが全部そのまま判断の材料になります。</p>
+      <p><strong>装置は4種類。これで全部です。</strong>ミラーでビームを折り、プリズムで白を赤・緑・青に割り、分光器で1本のビームから必要な分だけを抜き取り、合波器で色を足し合わせる。それでも盤面が難しくなり続けるのは、<strong>分光器が抜き取れるのが「半分」「4分の1」「8分の1」だけ</strong>だからです。3も5も、装置が直接は作れない数です。要求された値をつくるには、割った光をもう一度足し合わせるしかありません。</p>
+      <p><strong>満たした注文は消えません。</strong>ウェーブが進むたびに注文は増え、一度引き受けた注文は以降ずっと供給し続けなければなりません。納品して終わりではなく、通し続ける配線として盤面に残ります。だから盤面は、あなたが引き受けてきたもの全部の記録になります。</p>
+      <p><strong>増えるのは、光源の本数だけです。</strong>数ウェーブに一度、盤面に光源が1本増えます。ただし1本あたりの明るさは最初から最後まで変わりません。手に入るのは強い光ではなく、盤面の別の場所から出てくる、もう1本の白い光です。新しい光源は、そこまで配線を伸ばして既存の網と落ち合わせるまで何の役にも立たない ── <strong>供給が増えるたびに、仕事が増えます。</strong></p>
+      <p><strong>詰まっているのではなく、見えていないだけです。</strong>手が無いように見える盤面のほとんどは、必要な光がすでにどこかで捨てられている盤面です。壁で終わっている支線、要求より多く受け取っている届け先。それを見つけて引き直した瞬間に、盤面が一段軽くなります。どの注文に光が余っていて、どのビームが誰にも使われていないかは常に盤面上に表示されます。隠しません。ただし答えも出しません。</p>
+      <p>壁の形も光源の位置も色の傾向も違う<strong>10枚のマップ</strong>から選んで始めます。数十ウェーブ後、あなたの工場は端から端まで光が走る一枚の織物になっています。<strong>終わりはありません。スコアは、どこまで進めたかです。</strong></p>
+
+      <h3>特徴</h3>
+      <ul>
+        <li><strong>唯一の資源は光</strong> — 電力も資金も在庫もない。分けた分だけ弱くなる</li>
+        <li><strong>装置は4種類</strong> — ミラー、プリズム、分光器、合波器。覚えるのは5分、悩むのはそのあと</li>
+        <li><strong>作れない数を作る</strong> — 抜き取れるのは 1/2・1/4・1/8 だけ。要求値は割って足し戻す</li>
+        <li><strong>増えるのは光源の本数</strong> — 強い光ではなく、遠くにもう1本。供給が増えるたびに仕事が増える</li>
+        <li><strong>注文は消えない</strong> — 引き受けた注文は以降ずっと通し続ける。盤面が判断の記録になる</li>
+        <li><strong>1個で全部が変わる</strong> — ビームは直線。装置を1個ずらすと、遠くの注文の色が変わる</li>
+        <li><strong>余りは必ず盤面にある</strong> — 詰まっているのではなく、見えていないだけ</li>
+        <li><strong>無限セッション</strong> — クリアはない。スコアは到達ウェーブ。マップは10枚</li>
+        <li><strong>全編が描画</strong> — 画像素材を1枚も使わずに描かれた画面</li>
+      </ul>
+
+      <h3>製品情報</h3>
+      <table class="facts">
+        <tr><th>タイトル</th><td>Prism Factory</td></tr>
+        <tr><th>ジャンル</th><td>最適化 / インクリメンタル。光を配線する工場シミュレーション</td></tr>
+        <tr><th>プラットフォーム</th><td>PC（Windows / Steam）</td></tr>
+        <tr><th>対応言語</th><td>日本語、英語（テキスト。音声なし）</td></tr>
+        <tr><th>発売時期</th><td>2027年前半 予定</td></tr>
+        <tr><th>価格</th><td>未定</td></tr>
+        <tr><th>デモ版</th><td>2026年9月 公開予定</td></tr>
+        <tr><th>開発</th><td>Nulpoyo（個人開発）</td></tr>
+        <tr><th>Steam</th><td>ストアページ準備中</td></tr>
+      </table>
+
+      <div class="note">題名は、文字として出るところすべて <strong>Prism Factory</strong> です。全大文字の <strong>PRISM FACTORY</strong> は描かれたロゴだけの表記ですので、本文中では大文字にしないでいただけると助かります。</div>
+
+      <h3>開発者</h3>
+      <p>Nulpoyo（ぬるぽよ）。日本の会社員。本業のかたわら、個人でゲームを制作しています。</p>
+      <p>このゲームは「増えない資源だけで、どこまで積み上がるか」を確かめたくて作りました。工場ゲームは普通、電力や資金や部品といった第二の資源で難しさを作ります。それを1つも入れず、光の総量という1種類の数字だけで最後まで持たせられるか。プロトタイプでそれが成立したので、そのまま製品にしました。</p>
+      <p>いちばん作りたかったのは、手が無いと思っていた盤面で、自分がずっと捨てていた光を見つける瞬間です。あれが出るように、余剰と損失は隠さず常に盤面へ出しています。ただし答えは出しません。どう組み替えるかは、遊ぶ人の仕事です。</p>
+      <p>画面に出ているものは、文字を除いて全部その場で描かれています。画像素材は1枚も使っていません。スコアは到達ウェーブですが、人に見せたくなるのは盤面のほうだと思っています。</p>
+    </div>
+
+    <!-- English -->
+    <div class="l-en">
+      <h2>About</h2>
+      <p>Prism Factory is a factory game about taking white light and delivering it as the colour and brightness each order demands.</p>
+      <p><strong>&quot;Yellow light, intensity 5.&quot;</strong> That is the shape every order arrives in. All the board gives you is one lamp and a white beam travelling in a straight line. You place optical devices to bend it, split it, and blend it until a port gets exactly the light it asked for.</p>
+      <p><strong>No device creates light.</strong> If a lamp emits 8, then 8 is what it puts on the board — no more. Split it in two and you hold 4 and 4. Conservation of energy is the resource constraint. There is no power grid, no money, no parts inventory. <strong>Refusing a second resource is the centre of this design.</strong> With a single number to track, everything visible on the board is something you can reason with.</p>
+      <p><strong>Four devices. That is the entire toolbox.</strong> A mirror turns a beam. A prism splits white into red, green, and blue. A splitter taps a fraction off a beam and lets the rest carry on. A merger adds colours back together. The board keeps getting harder anyway, because <strong>a splitter can only tap a half, a quarter, or an eighth</strong>. Three is not a number a device can hand you, and neither is five. To reach the value an order wants, you have to split light and add it back together.</p>
+      <p><strong>A filled order never goes away.</strong> Every wave brings another one, and once you take an order you supply it forever. Nothing is ever delivered and done — it stays on the board as a line you have to keep feeding. Which makes the board a record of everything you have agreed to.</p>
+      <p><strong>What grows is the number of lamps.</strong> Every few waves another lamp appears — but a single lamp is exactly as bright on the last wave as it was on the first. What you are handed is never stronger light; it is another white beam, somewhere else on the board, worth nothing until you run a line out to it and bring it together with what you have already placed. <strong>Every time supply grows, you get more work.</strong></p>
+      <p><strong>You are not stuck. You just cannot see it.</strong> Most boards that look hopeless are boards where the light you need is already there and already being thrown away — a tapped line ending at a wall, a port taking more than it asked for. Find it, rewire, and the whole board loosens by a notch. Which orders are getting more light than they need, and which beams nobody is using, is shown on the board at all times. Nothing is hidden. Nothing is solved for you either.</p>
+      <p>Start on any of <strong>ten maps</strong>, each with its own walls, lamp placements, and colour profile. Dozens of waves later, your factory is one sheet of light running edge to edge. <strong>There is no ending. Your score is how far you got.</strong></p>
+
+      <h3>Key features</h3>
+      <ul>
+        <li><strong>Light is the only resource</strong> — No power, no money, no inventory. Every split costs what it gives</li>
+        <li><strong>Four devices</strong> — Mirror, prism, splitter, merger. Five minutes to learn, hours to put down</li>
+        <li><strong>Numbers no device can make</strong> — Taps come in halves, quarters, eighths. Split it and add it back</li>
+        <li><strong>Growth means more lamps</strong> — Never brighter light. Every time supply grows, so does the work</li>
+        <li><strong>Orders are forever</strong> — Take one and you supply it for the rest of the run</li>
+        <li><strong>One device, whole board</strong> — Beams run straight. Nudge one device and a distant order changes colour</li>
+        <li><strong>The slack is always there</strong> — You are never stuck. You just cannot see it yet</li>
+        <li><strong>Endless sessions</strong> — Nothing to clear. Your score is the wave you reached. Ten maps</li>
+        <li><strong>Drawn, not painted</strong> — Every pixel on screen is rendered. No image assets at all</li>
+      </ul>
+
+      <h3>Fact sheet</h3>
+      <table class="facts">
+        <tr><th>Title</th><td>Prism Factory</td></tr>
+        <tr><th>Genre</th><td>Optimisation / incremental. A factory sim about wiring light</td></tr>
+        <tr><th>Platform</th><td>PC (Windows / Steam)</td></tr>
+        <tr><th>Languages</th><td>English, Japanese (text; no voice acting)</td></tr>
+        <tr><th>Release</th><td>H1 2027</td></tr>
+        <tr><th>Price</th><td>TBA</td></tr>
+        <tr><th>Demo</th><td>Planned for September 2026</td></tr>
+        <tr><th>Developer</th><td>Nulpoyo (solo)</td></tr>
+        <tr><th>Steam</th><td>Store page in preparation</td></tr>
+      </table>
+
+      <div class="note">In running text the title is always <strong>Prism Factory</strong>. The all-caps <strong>PRISM FACTORY</strong> belongs to the drawn logo only — please don't set the title in caps in body copy.</div>
+
+      <h3>Developer</h3>
+      <p>Nulpoyo. A solo developer based in Japan, making games alongside a full-time office job.</p>
+      <p>I built this game to find out how far a single, non-renewable resource can carry a factory. Factory games usually manufacture difficulty out of a second resource — power, money, parts. I wanted to put none of them in, and see whether one number, the total amount of light on the board, could hold a whole game together. The prototype said yes, so that is the game.</p>
+      <p>The moment I most wanted to build is the one where a board you thought was finished turns out to have been throwing away exactly what you needed. To make that moment possible, spare light and losses are shown on the board at all times. Nothing is hidden. Nothing is solved for you either.</p>
+      <p>Everything on screen except the text is drawn as you watch. There is not a single image asset in the game. Your score is the wave you reached — but the board is the thing you will want to show people.</p>
+    </div>
+
+  </div>
+</section>
+
+<!-- ============ 素材 ============ -->
+<section id="media">
+  <div class="wrap">
+    <h2 class="l-ja">スクリーンショット</h2>
+    <h2 class="l-en">Screenshots</h2>
+    <p class="lead l-ja">一覧は表示用の縮小版です。<strong>クリックすると無加工の原寸（1920×1080）が開きます。</strong>現在収録しているのは英語UIの画のみで、日本語UI版は追って追加します。</p>
+    <p class="lead l-en">The grid shows downscaled previews. <strong>Click any shot for the unmodified original (1920×1080).</strong> Japanese-UI versions will be added later.</p>
+
+    <div class="grid" id="shots">
+      <figure>
+        <a href="assets/images/01_board_late_en.png"><img src="assets/thumbs/01_board_late_en.webp" alt="A late-game board, wave 13" loading="lazy"></a>
+        <figcaption><span class="l-ja">終盤の盤面（ウェーブ13）</span><span class="l-en">A late board, wave 13</span></figcaption>
+      </figure>
+      <figure>
+        <a href="assets/images/02_board_wide.png"><img src="assets/thumbs/02_board_wide.webp" alt="A full board seen at once — light running edge to edge" loading="lazy"></a>
+        <figcaption><span class="l-ja">盤面の全景。光の織物になったところ（3840×2160）</span><span class="l-en">The whole board at once — one sheet of light (3840×2160)</span></figcaption>
+      </figure>
+      <figure>
+        <a href="assets/images/03_prism_en.png"><img src="assets/thumbs/03_prism_en.webp" alt="A prism splits white into red, green and blue" loading="lazy"></a>
+        <figcaption><span class="l-ja">プリズムが白を赤・緑・青に割る</span><span class="l-en">A prism splits white into red, green and blue</span></figcaption>
+      </figure>
+      <figure>
+        <a href="assets/images/04_splitter_en.png"><img src="assets/thumbs/04_splitter_en.webp" alt="A splitter taps a half off the beam" loading="lazy"></a>
+        <figcaption><span class="l-ja">分光器が幹線から半分だけ抜き取る</span><span class="l-en">A splitter taps a half off the line</span></figcaption>
+      </figure>
+      <figure>
+        <a href="assets/images/05_merger_en.png"><img src="assets/thumbs/05_merger_en.webp" alt="A merger adds red and green into yellow" loading="lazy"></a>
+        <figcaption><span class="l-ja">合波器が赤と緑を足して黄をつくる</span><span class="l-en">A merger adds red and green into yellow</span></figcaption>
+      </figure>
+      <figure>
+        <a href="assets/images/06_orders_en.png"><img src="assets/thumbs/06_orders_en.webp" alt="The order panel, and what each order still needs" loading="lazy"></a>
+        <figcaption><span class="l-ja">注文パネル。何がどれだけ足りていないか</span><span class="l-en">The order panel, and what is still short</span></figcaption>
+      </figure>
+      <figure>
+        <a href="assets/images/07_placing_en.png"><img src="assets/thumbs/07_placing_en.webp" alt="Placing a device, with the preview shown" loading="lazy"></a>
+        <figcaption><span class="l-ja">装置を持って設置先を選んでいるところ</span><span class="l-en">Choosing where a device goes</span></figcaption>
+      </figure>
+      <figure>
+        <a href="assets/images/08_spare_light_en.png"><img src="assets/thumbs/08_spare_light_en.webp" alt="Spare light and losses are shown on the board" loading="lazy"></a>
+        <figcaption><span class="l-ja">余っている光と、捨てられている光</span><span class="l-en">Spare light, and light nobody uses</span></figcaption>
+      </figure>
+      <figure>
+        <a href="assets/images/09_board_mid_en.png"><img src="assets/thumbs/09_board_mid_en.webp" alt="A mid-game board, wave 6" loading="lazy"></a>
+        <figcaption><span class="l-ja">中盤の盤面（ウェーブ6）</span><span class="l-en">A mid-game board, wave 6</span></figcaption>
+      </figure>
+      <figure>
+        <a href="assets/images/10_board_early_en.png"><img src="assets/thumbs/10_board_early_en.webp" alt="The opening board, wave 1" loading="lazy"></a>
+        <figcaption><span class="l-ja">開幕の盤面（ウェーブ1）</span><span class="l-en">The opening board, wave 1</span></figcaption>
+      </figure>
+      <figure>
+        <a href="assets/images/11_maps_en.png"><img src="assets/thumbs/11_maps_en.webp" alt="Map select — ten boards, unlocked by how far you reach" loading="lazy"></a>
+        <figcaption><span class="l-ja">マップ選択。10枚が到達ウェーブで解放される</span><span class="l-en">Map select — ten boards, unlocked by how far you reach</span></figcaption>
+      </figure>
+      <figure>
+        <a href="assets/images/12_tutorial_en.png"><img src="assets/thumbs/12_tutorial_en.webp" alt="The opening tutorial: light reaches a port" loading="lazy"></a>
+        <figcaption><span class="l-ja">冒頭のチュートリアル。光が届け先に届く</span><span class="l-en">The opening tutorial: light reaches a port</span></figcaption>
+      </figure>
+    </div>
+
+    <h2 style="margin-top:44px;" class="l-ja">ループ動画</h2>
+    <h2 style="margin-top:44px;" class="l-en">Loops</h2>
+    <p class="lead l-ja">記事や投稿にそのままお使いいただけます。無音・数秒でループします。<strong>盤面には文字が入らないため、日英で同じファイルです。</strong>GIF 版が必要な場合はご連絡ください。</p>
+    <p class="lead l-en">Short silent loops, free to embed as-is. <strong>No on-screen text, so the same file serves both languages.</strong> Ask if you need them as GIFs.</p>
+
+    <div class="grid" id="gifs">
+      <figure>
+        <video src="assets/gifs/loop_prism.mp4" autoplay loop muted playsinline preload="metadata"></video>
+        <figcaption><span class="l-ja">プリズムで白が3色に割れる — <a href="assets/gifs/loop_prism.mp4">ダウンロード</a></span><span class="l-en">A prism splits white into three — <a href="assets/gifs/loop_prism.mp4">download</a></span></figcaption>
+      </figure>
+      <figure>
+        <video src="assets/gifs/loop_mirror.mp4" autoplay loop muted playsinline preload="metadata"></video>
+        <figcaption><span class="l-ja">ミラーでビームを折る — <a href="assets/gifs/loop_mirror.mp4">ダウンロード</a></span><span class="l-en">A mirror turns the beam — <a href="assets/gifs/loop_mirror.mp4">download</a></span></figcaption>
+      </figure>
+      <figure>
+        <video src="assets/gifs/loop_mirror_prism.mp4" autoplay loop muted playsinline preload="metadata"></video>
+        <figcaption><span class="l-ja">曲げて、割って、届け先が満ちるまで — <a href="assets/gifs/loop_mirror_prism.mp4">ダウンロード</a></span><span class="l-en">Bend it, split it, fill the port — <a href="assets/gifs/loop_mirror_prism.mp4">download</a></span></figcaption>
+      </figure>
+      <figure>
+        <video src="assets/gifs/loop_splitter.mp4" autoplay loop muted playsinline preload="metadata"></video>
+        <figcaption><span class="l-ja">分光器で 1/4 を抜き、合波器で足して要求値をつくる — <a href="assets/gifs/loop_splitter.mp4">ダウンロード</a></span><span class="l-en">Tap a quarter, add it back, hit the number — <a href="assets/gifs/loop_splitter.mp4">download</a></span></figcaption>
+      </figure>
+      <figure>
+        <video src="assets/gifs/loop_merger.mp4" autoplay loop muted playsinline preload="metadata"></video>
+        <figcaption><span class="l-ja">合波器で色が混ざる — <a href="assets/gifs/loop_merger.mp4">ダウンロード</a></span><span class="l-en">A merger blends two colours — <a href="assets/gifs/loop_merger.mp4">download</a></span></figcaption>
+      </figure>
+      <figure>
+        <video src="assets/gifs/loop_port.mp4" autoplay loop muted playsinline preload="metadata"></video>
+        <figcaption><span class="l-ja">届け先が満ちて点灯する — <a href="assets/gifs/loop_port.mp4">ダウンロード</a></span><span class="l-en">A port fills and lights up — <a href="assets/gifs/loop_port.mp4">download</a></span></figcaption>
+      </figure>
+      <figure>
+        <video src="assets/gifs/loop_board_late.mp4" autoplay loop muted playsinline preload="metadata"></video>
+        <figcaption><span class="l-ja">終盤の盤面。操作なしの俯瞰 — <a href="assets/gifs/loop_board_late.mp4">ダウンロード</a></span><span class="l-en">A late board, running untouched — <a href="assets/gifs/loop_board_late.mp4">download</a></span></figcaption>
+      </figure>
+    </div>
+
+    <h2 style="margin-top:44px;" class="l-ja">ロゴ・キーアート</h2>
+    <h2 style="margin-top:44px;" class="l-en">Logo &amp; key art</h2>
+    <p class="lead l-ja">Steam 用に書き出した原寸です。ロゴは背景が透過した PNG。クリックで原寸が開きます。</p>
+    <p class="lead l-en">Originals as exported for Steam. The logo is a PNG with a transparent background. Click for the full-size file.</p>
+
+    <div class="grid" id="branding">
+      <figure>
+        <a href="assets/branding/logo_1280x720.png"><img src="assets/branding/logo_1280x720.png" alt="Prism Factory logo, transparent PNG" loading="lazy"></a>
+        <figcaption><span class="l-ja">ロゴ（透過 PNG、1280×720）</span><span class="l-en">Logo (transparent PNG, 1280×720)</span></figcaption>
+      </figure>
+      <figure>
+        <a href="assets/branding/capsule_main_1232x706.png"><img src="assets/branding/capsule_main_1232x706.png" alt="Key art" loading="lazy"></a>
+        <figcaption><span class="l-ja">キーアート / メインカプセル（1232×706）</span><span class="l-en">Key art / main capsule (1232×706)</span></figcaption>
+      </figure>
+      <figure>
+        <a href="assets/branding/capsule_header_920x430.png"><img src="assets/branding/capsule_header_920x430.png" alt="Header capsule" loading="lazy"></a>
+        <figcaption><span class="l-ja">ヘッダーカプセル（920×430）</span><span class="l-en">Header capsule (920×430)</span></figcaption>
+      </figure>
+      <figure>
+        <a href="assets/branding/capsule_vertical_748x896.png"><img src="assets/branding/capsule_vertical_748x896.png" alt="Vertical capsule" loading="lazy"></a>
+        <figcaption><span class="l-ja">縦型カプセル（748×896）</span><span class="l-en">Vertical capsule (748×896)</span></figcaption>
+      </figure>
+      <figure>
+        <a href="assets/branding/capsule_library_600x900.png"><img src="assets/branding/capsule_library_600x900.png" alt="Library capsule" loading="lazy"></a>
+        <figcaption><span class="l-ja">ライブラリカプセル（600×900）</span><span class="l-en">Library capsule (600×900)</span></figcaption>
+      </figure>
+      <figure>
+        <a href="assets/branding/capsule_small_462x174.png"><img src="assets/branding/capsule_small_462x174.png" alt="Small capsule" loading="lazy"></a>
+        <figcaption><span class="l-ja">小型カプセル（462×174）</span><span class="l-en">Small capsule (462×174)</span></figcaption>
+      </figure>
+      <figure>
+        <a href="assets/branding/hero_3840x1240.png"><img src="assets/branding/hero_3840x1240.png" alt="Hero banner" loading="lazy"></a>
+        <figcaption><span class="l-ja">ヒーローバナー（3840×1240）</span><span class="l-en">Hero banner (3840×1240)</span></figcaption>
+      </figure>
+      <figure>
+        <a href="assets/branding/page_background_1438x810.png"><img src="assets/branding/page_background_1438x810.png" alt="Page background" loading="lazy"></a>
+        <figcaption><span class="l-ja">ページ背景（1438×810）</span><span class="l-en">Page background (1438×810)</span></figcaption>
+      </figure>
+      <figure>
+        <a href="assets/branding/community_icon_184x184.png"><img src="assets/branding/community_icon_184x184.png" alt="Community icon" loading="lazy"></a>
+        <figcaption><span class="l-ja">コミュニティアイコン（184×184）</span><span class="l-en">Community icon (184×184)</span></figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ダウンロード ============ -->
+<section id="downloads">
+  <div class="wrap">
+    <h2 class="l-ja">ダウンロード</h2>
+    <h2 class="l-en">Downloads</h2>
+
+    <div class="buttons">
+      <a class="btn" href="https://github.com/xz585a/prism-factory-presskit/releases/download/assets/PrismFactory_PressKit.zip" download><span class="l-ja">一括ダウンロード zip（30MB）</span><span class="l-en">Full press kit, zip (30 MB)</span></a>
+      <a class="btn ghost" href="https://github.com/xz585a/prism-factory-presskit/releases/download/assets/PrismFactory_Trailer.mp4" download><span class="l-ja">トレーラー mp4（20MB）</span><span class="l-en">Trailer mp4 (20 MB)</span></a>
+      <a class="btn ghost" href="fact_sheet_ja.txt">fact_sheet_ja.txt</a>
+      <a class="btn ghost" href="fact_sheet_en.txt">fact_sheet_en.txt</a>
+    </div>
+
+    <p class="lead l-ja" style="margin-top:14px;">zip にはスクリーンショット12枚（無加工の PNG）、ループ動画7点（mp4、無音）、ロゴとカプセル画像9点、ファクトシート（日英）が入っています。トレーラーは容量が大きいため別ダウンロードです。</p>
+    <p class="lead l-en" style="margin-top:14px;">The zip contains 12 unmodified screenshots (PNG), 7 silent loops (mp4), the logo and 8 capsule images, and both fact sheets. The trailer is a separate download.</p>
+
+    <div class="l-ja">
+      <h3>素材の利用について</h3>
+      <p>本プレスキットに含まれる画像・動画・テキストは、記事・動画・配信でのご使用が自由です。実況・収益化を含む配信も許可しています。事前・事後のご連絡は不要です。特定の場面のキャプチャや追加の素材が必要でしたら、お気軽にお申し付けください。</p>
+    </div>
+    <div class="l-en">
+      <h3>Usage permission</h3>
+      <p>All assets in this press kit are free to use in articles, videos and streams, including monetized content. No permission or notification needed. If you need a specific scene captured or a different asset, just ask.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 連絡先 ============ -->
+<section id="contact">
+  <div class="wrap">
+    <h2 class="l-ja">連絡先</h2>
+    <h2 class="l-en">Contact</h2>
+
+    <table class="facts l-ja">
+      <tr><th>開発</th><td>Nulpoyo（個人開発）</td></tr>
+      <tr><th>メール</th><td><a href="mailto:xz585a@gmail.com">xz585a@gmail.com</a></td></tr>
+      <tr><th>Steam</th><td>ストアページ準備中</td></tr>
+    </table>
+    <table class="facts l-en">
+      <tr><th>Developer</th><td>Nulpoyo (solo)</td></tr>
+      <tr><th>Email</th><td><a href="mailto:xz585a@gmail.com">xz585a@gmail.com</a></td></tr>
+      <tr><th>Steam</th><td>Store page in preparation</td></tr>
+    </table>
+
+    <div class="note l-ja">デモ版のキー、追加のスクリーンショット、特定の場面の撮影などは、上記メールへお気軽にご連絡ください。</div>
+    <div class="note l-en">Demo keys, extra screenshots and custom captures are available on request — just email me.</div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">Prism Factory — Press Kit &nbsp;/&nbsp; © Nulpoyo</div>
+</footer>
+
+<script>
+(function () {
+  var body = document.body;
+  var buttons = { ja: document.getElementById('btn-ja'), en: document.getElementById('btn-en') };
+
+  function apply(lang) {
+    body.classList.remove('lang-ja', 'lang-en');
+    body.classList.add('lang-' + lang);
+    document.documentElement.lang = lang;
+    buttons.ja.setAttribute('aria-pressed', String(lang === 'ja'));
+    buttons.en.setAttribute('aria-pressed', String(lang === 'en'));
+    try { localStorage.setItem('pf-presskit-lang', lang); } catch (e) {}
+    playVisibleLoops();
+  }
+
+  // display:none だったループ動画は、表示に切り替わっても自動では再生が始まらない
+  // ブラウザがあるため、明示的に鳴らす（muted なので自動再生は許可される）。
+  function playVisibleLoops() {
+    var loops = document.querySelectorAll('#gifs video');
+    for (var i = 0; i < loops.length; i++) {
+      var v = loops[i];
+      if (v.offsetParent === null) continue;
+      var p = v.play();
+      if (p && p.catch) p.catch(function () {});
+    }
+  }
+
+  // 優先順位: 前回の選択 > ブラウザの言語設定 > 英語
+  var saved = null;
+  try { saved = localStorage.getItem('pf-presskit-lang'); } catch (e) {}
+  var initial = saved || ((navigator.language || 'en').toLowerCase().indexOf('ja') === 0 ? 'ja' : 'en');
+  apply(initial);
+
+  buttons.ja.addEventListener('click', function () { apply('ja'); });
+  buttons.en.addEventListener('click', function () { apply('en'); });
+})();
+</script>
+
+</body>
+</html>

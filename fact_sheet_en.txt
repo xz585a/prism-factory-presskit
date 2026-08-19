@@ -1,0 +1,111 @@
+Prism Factory — Fact Sheet (English)
+https://xz585a.github.io/prism-factory-presskit/
+
+================================================================
+Fact sheet
+================================================================
+
+Title:          Prism Factory
+Genre:          Optimisation / incremental. A factory sim about wiring light
+Platform:       PC (Windows / Steam)
+Languages:      English, Japanese (text; no voice acting)
+Release:        H1 2027
+Price:          TBA
+Demo:           Planned for September 2026
+Developer:      Nulpoyo (solo)
+Steam:          (store page in preparation — link to follow)
+Press kit:      https://xz585a.github.io/prism-factory-presskit/
+Trailer:        (YouTube link to follow. The mp4 can be downloaded from the press kit page)
+
+Note on the name: in running text the title is always "Prism Factory".
+The all-caps "PRISM FACTORY" belongs to the drawn logo only — please don't
+set the title in caps in body copy.
+
+================================================================
+About
+================================================================
+
+Prism Factory is a factory game about taking white light and delivering it as the colour and
+brightness each order demands.
+
+"Yellow light, intensity 5." That is the shape every order arrives in. All the board gives you is
+one lamp and a white beam travelling in a straight line. You place optical devices to bend it,
+split it, and blend it until a port gets exactly the light it asked for.
+
+No device creates light. If a lamp emits 8, then 8 is what it puts on the board — no more. Split
+it in two and you hold 4 and 4. Conservation of energy is the resource constraint. There is no
+power grid, no money, no parts inventory. Refusing a second resource is the centre of this design.
+
+There are four devices, and that is the entire toolbox. A mirror turns a beam. A prism splits
+white into red, green, and blue. A splitter taps a fraction off a beam and lets the rest carry on.
+A merger adds colours back together. The board keeps getting harder anyway, because a splitter can
+only tap a half, a quarter, or an eighth. Three is not a number a device can hand you, and neither
+is five. To reach the value an order wants, you have to split light and add it back together.
+
+A filled order never goes away. Every wave brings another one, and once you take an order you
+supply it forever. Nothing is ever delivered and done — it stays on the board as a line you have
+to keep feeding. Which makes the board a record of everything you have agreed to.
+
+What grows is the number of lamps. Every few waves another lamp appears, but a single lamp is
+exactly as bright on the last wave as it was on the first. What you are handed is never stronger
+light — it is another white beam, somewhere else on the board. Every time supply grows, you get
+more work.
+
+Most boards that look hopeless are boards where the light you need is already there and already
+being thrown away — a tapped line ending at a wall, a port taking more than it asked for. Find it,
+rewire, and the whole board loosens by a notch. You are not stuck. You just cannot see it yet.
+
+Start on any of ten maps, each with its own walls, lamp placements, and colour profile. There is
+no ending. Your score is how far you got.
+
+================================================================
+Key features
+================================================================
+
+- Light is the only resource — No power, no money, no inventory. Every split costs what it gives
+- Four devices — Mirror, prism, splitter, merger. Five minutes to learn, hours to put down
+- Numbers no device can make — Taps come in halves, quarters, eighths. Split it and add it back
+- Growth means more lamps — Never brighter light. Every time supply grows, so does the work
+- Orders are forever — Take one and you supply it for the rest of the run
+- One device, whole board — Beams run straight. Nudge one device and a distant order changes colour
+- The slack is always there — You are never stuck. You just cannot see it yet
+- Endless sessions — Nothing to clear. Your score is the wave you reached. Ten maps
+- Drawn, not painted — Every pixel on screen is rendered. No image assets at all
+- Language support — English and Japanese
+
+================================================================
+Developer
+================================================================
+
+Nulpoyo. A solo developer based in Japan, making games alongside a full-time office job.
+
+I built this game to find out how far a single, non-renewable resource can carry a factory. Factory
+games usually manufacture difficulty out of a second resource — power, money, parts. I wanted to
+put none of them in, and see whether one number, the total amount of light on the board, could hold
+a whole game together. The prototype said yes, so that is the game.
+
+With a single number to track, everything visible on the board is something you can reason with.
+When you come up short, there is only ever one question to ask: where is light going to waste?
+
+The moment I most wanted to build is the one where a board you thought was finished turns out to
+have been throwing away exactly what you needed. To make that moment possible, spare light and
+losses are shown on the board at all times. Nothing is hidden. Nothing is solved for you either.
+
+Everything on screen except the text is drawn as you watch. There is not a single image asset in
+the game. Your score is the wave you reached — but the board is the thing you will want to show
+people.
+
+================================================================
+Usage permission
+================================================================
+
+All assets in this press kit are free to use in articles, videos and streams, including monetized
+content. No permission or notification needed. If you need a specific scene captured or a
+different asset, just ask.
+
+================================================================
+Contact
+================================================================
+
+Nulpoyo (solo)
+Email: xz585a@gmail.com
