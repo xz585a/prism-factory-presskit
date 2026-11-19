@@ -25,69 +25,53 @@ set the title in caps in body copy.
 About
 ================================================================
 
-Prism Factory is a factory game where you wire rainbows. Split white light into red, green and
-blue with prisms, bend it with mirrors and blend it back together to deliver the colour and
-brightness each order demands. The orders never stop, the game never ends, and the longer you
-play, the more colourful the board becomes.
+■ Split it, mix it, deliver it. A factory game where you wire rainbows
 
-"Yellow light, intensity 5." That is the shape every order arrives in. All the board gives you is
-one lamp and a white beam travelling in a straight line. You place optical devices to bend it,
-split it, and blend it until a port gets exactly the light it asked for.
+Shine white light through a prism and it splits into red, green and blue. Bend those beams with mirrors, mix them back together, and deliver the exact colour each order asks for. That is what your factory does.
 
-No device creates light. If a lamp emits 8, then 8 is what it puts on the board — no more. Split
-it in two and you hold 4 and 4. Conservation of energy is the resource constraint. There is no
-power grid, no money, no parts inventory. Refusing a second resource is the centre of this design.
+■ Mix colours to fill every order
 
-There are four devices, and that is the entire toolbox. A mirror turns a beam. A prism splits
-white into red, green, and blue. A splitter taps a fraction off a beam and lets the rest carry on.
-A merger adds colours back together. The board keeps getting harder anyway, because a splitter can
-only tap a half, a quarter, or an eighth. Three is not a number a device can hand you, and neither
-is five. To reach the value an order wants, you have to split light and add it back together.
+Light can be mixed. Red and green make yellow, red and blue make magenta, green and blue make cyan. Bring all three together and you are back to white.
 
-A filled order never goes away. Every wave brings another one, and once you take an order you
-supply it forever. Nothing is ever delivered and done — it stays on the board as a line you have
-to keep feeding. Which makes the board a record of everything you have agreed to.
+Orders arrive like this: "Yellow light, 4." Gather the colours you need, get the amount just right, and send it on its way.
 
-What grows is the number of lamps. Every few waves another lamp appears, but a single lamp is
-exactly as bright on the last wave as it was on the first. What you are handed is never stronger
-light — it is another white beam, somewhere else on the board. Every time supply grows, you get
-more work.
+■ Just four tools
 
-Most boards that look hopeless are boards where the light you need is already there and already
-being thrown away — a tapped line ending at a wall, a port taking more than it asked for. Find it,
-rewire, and the whole board loosens by a notch. You are not stuck. You just cannot see it yet.
+・Mirror — turns a beam
+・Prism — splits white light into red, green and blue
+・Splitter — takes a half, a quarter or an eighth of a beam
+・Merger — mixes several beams into one
 
-Start on any of ten maps, each with its own walls, lamp placements, and colour profile. There is
-no ending. Your score is how far you got.
+That is everything there is to learn, and the How to Play tutorial walks you through each one.
 
-================================================================
-Key features
-================================================================
+■ The further you go, the more colourful it gets
 
-- Light is the only resource — No power, no money, no inventory. Every split costs what it gives
-- Four devices — Mirror, prism, splitter, merger. Five minutes to learn, hours to put down
-- Numbers no device can make — Taps come in halves, quarters, eighths. Split it and add it back
-- Growth means more lamps — Never brighter light. Every time supply grows, so does the work
-- Orders are forever — Take one and you supply it for the rest of the run
-- One device, whole board — Beams run straight. Nudge one device and a distant order changes colour
-- The slack is always there — You are never stuck. You just cannot see it yet
-- Endless sessions — Nothing to clear. Your score is the wave you reached. Ten maps
-- Drawn, not painted — Every pixel on screen is rendered. No image assets at all
-- Language support — English and Japanese
+Every wave brings a new order, and every order you take, you keep supplying. Each new order adds more lines of light, until the single white beam you started with has become a rainbow of wiring across the whole board.
+
+New lamps appear now and then, always somewhere else on the board. Where do you bring the new light in, and how do you join it to what you already have? When the board gets crowded, rewiring to make room is where the real skill comes in.
+
+■ A factory with no ending
+
+Each wave runs on a deadline, and when it runs out, a customer walks away. Lose enough customers and the run is over. How far did your factory grow? The wave you reached is your score. Want to play without the clock? There is a mode for that too.
+
+■ Ten maps
+
+Unlock ten maps with different walls and lamp layouts as you reach further waves. One of them is randomly generated every time you play. Every map has its own leaderboard, so you can see how far players around the world got.
+
+■ Key features
+
+・Split and mix light — A prism makes three colours; mix them into yellow, magenta and cyan
+・Just four tools — Mirror, prism, splitter, merger
+・More colourful the longer you play — Every order fills the board with more rainbow wiring
+・A factory with no ending — Your score is the wave you reached. A no-deadline mode too
+・Ten maps — A leaderboard for every map, and nine achievements
+・Language support — English and Japanese
 
 ================================================================
 Developer
 ================================================================
 
 Nulpoyo. A solo developer based in Japan, making games alongside a full-time office job.
-
-I built this game to find out how far a single, non-renewable resource can carry a factory. Factory
-games usually manufacture difficulty out of a second resource — power, money, parts. I wanted to
-put none of them in, and see whether one number, the total amount of light on the board, could hold
-a whole game together. The prototype said yes, so that is the game.
-
-With a single number to track, everything visible on the board is something you can reason with.
-When you come up short, there is only ever one question to ask: where is light going to waste?
 
 The moment I most wanted to build is the one where a board you thought was finished turns out to
 have been throwing away exactly what you needed. To make that moment possible, spare light and
