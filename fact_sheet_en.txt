@@ -9,13 +9,13 @@ Title:          Prism Factory
 Genre:          Optimisation / incremental. A factory sim about wiring light
 Platform:       PC (Windows / Steam)
 Languages:      English, Japanese (text; no voice acting)
-Release:        H1 2027
-Price:          TBA
-Demo:           Planned for September 2026
+Release:        November 26, 2026
+Price:          $2.99 (10% off for the first week)
+Demo:           Free on Steam (two maps, up to wave 18)
 Developer:      Nulpoyo (solo)
 Steam:          https://store.steampowered.com/app/5114180/
 Press kit:      https://xz585a.github.io/prism-factory-presskit/
-Trailer:        (YouTube link to follow. The mp4 can be downloaded from the press kit page)
+Trailer:        https://xz585a.github.io/prism-factory-presskit/#trailer (mp4 download available)
 
 Note on the name: in running text the title is always "Prism Factory".
 The all-caps "PRISM FACTORY" belongs to the drawn logo only — please don't
@@ -25,8 +25,10 @@ set the title in caps in body copy.
 About
 ================================================================
 
-Prism Factory is a factory game about taking white light and delivering it as the colour and
-brightness each order demands.
+Prism Factory is a factory game where you wire rainbows. Split white light into red, green and
+blue with prisms, bend it with mirrors and blend it back together to deliver the colour and
+brightness each order demands. The orders never stop, the game never ends, and the longer you
+play, the more colourful the board becomes.
 
 "Yellow light, intensity 5." That is the shape every order arrives in. All the board gives you is
 one lamp and a white beam travelling in a straight line. You place optical devices to bend it,
