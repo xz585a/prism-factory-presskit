@@ -71,15 +71,8 @@ Unlock ten maps with different walls and lamp layouts as you reach further waves
 Developer
 ================================================================
 
-Nulpoyo. A solo developer based in Japan, making games alongside a full-time office job.
-
-The moment I most wanted to build is the one where a board you thought was finished turns out to
-have been throwing away exactly what you needed. To make that moment possible, spare light and
-losses are shown on the board at all times. Nothing is hidden. Nothing is solved for you either.
-
-Everything on screen except the text is drawn as you watch. There is not a single image asset in
-the game. Your score is the wave you reached — but the board is the thing you will want to show
-people.
+Nulpoyo. A Japanese office worker who makes games alone after work.
+I'm making a game about light, yet somehow I only ever work on it in the dark.
 
 ================================================================
 Usage permission
