@@ -40,7 +40,7 @@ Orders arrive like this: "Yellow light, 4." Gather the colours you need, get the
 ・Mirror — turns a beam
 ・Prism — splits white light into red, green and blue
 ・Splitter — takes a half, a quarter or an eighth of a beam
-・Merger — mixes several beams into one
+・Merger — adds beams together (different colours mix, the same colour adds up)
 
 That is everything there is to learn, and the How to Play tutorial walks you through each one.
 
@@ -52,7 +52,7 @@ New lamps appear now and then, always somewhere else on the board. Where do you 
 
 ■ A factory with no ending
 
-Each wave runs on a deadline, and when it runs out, a customer walks away. Lose enough customers and the run is over. How far did your factory grow? The wave you reached is your score. Want to play without the clock? There is a mode for that too.
+Each wave runs on a deadline, and when time runs out, your worst-served order is lost. Lose enough orders and the run is over. How far did your factory grow? The wave you reached is your score. Want to play without the clock? There is a mode for that too.
 
 ■ Ten maps
 
