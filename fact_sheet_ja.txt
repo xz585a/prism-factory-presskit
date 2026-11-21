@@ -12,7 +12,7 @@ https://store.steampowered.com/app/5114180/
 発売日:         2026年11月26日
 価格:           420円（発売から1週間は10%オフ）
 体験版:         Steam で無料配信中（マップ2枚、ウェーブ18まで）
-開発:           Nulpoyo（個人開発）
+開発:           Bento Games（個人開発）
 Steam:          https://store.steampowered.com/app/5114180/
 プレスキット:   https://xz585a.github.io/prism-factory-presskit/
 トレーラー:     https://xz585a.github.io/prism-factory-presskit/#trailer（mp4 もダウンロード可）
@@ -70,7 +70,7 @@ Steam:          https://store.steampowered.com/app/5114180/
 開発者
 ================================================================
 
-Nulpoyo（ぬるぽよ）。日本の会社員で、仕事のあとに一人でゲームを作っています。
+Bento Games。日本の会社員が、仕事のあとに一人でゲームを作っています。
 光のゲームを作っているのに、作業する時間はいつも真夜中です。
 
 ================================================================
@@ -85,5 +85,5 @@ Nulpoyo（ぬるぽよ）。日本の会社員で、仕事のあとに一人で�
 連絡先
 ================================================================
 
-Nulpoyo（個人開発）
+Bento Games（個人開発）
 メール: xz585a@gmail.com
