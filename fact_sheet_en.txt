@@ -13,6 +13,7 @@ Release:        November 26, 2026
 Price:          $2.99 (10% off for the first week)
 Demo:           Free on Steam (two maps, up to wave 18)
 Developer:      Bento Games (solo)
+Publisher:      Nulpoyo
 Steam:          https://store.steampowered.com/app/5114180/
 Press kit:      https://xz585a.github.io/prism-factory-presskit/
 Trailer:        https://xz585a.github.io/prism-factory-presskit/#trailer (mp4 download available)
@@ -71,7 +72,7 @@ Unlock ten maps with different walls and lamp layouts as you reach further waves
 Developer
 ================================================================
 
-Bento Games. One Japanese office worker, making games alone after work.
+A Japanese office worker who makes games alone after work.
 I'm making a game about light, yet somehow I only ever work on it in the dark.
 
 ================================================================

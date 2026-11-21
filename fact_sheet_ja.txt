@@ -13,6 +13,7 @@ https://store.steampowered.com/app/5114180/
 価格:           420円（発売から1週間は10%オフ）
 体験版:         Steam で無料配信中（マップ2枚、ウェーブ18まで）
 開発:           Bento Games（個人開発）
+パブリッシャー: Nulpoyo
 Steam:          https://store.steampowered.com/app/5114180/
 プレスキット:   https://xz585a.github.io/prism-factory-presskit/
 トレーラー:     https://xz585a.github.io/prism-factory-presskit/#trailer（mp4 もダウンロード可）
@@ -70,7 +71,7 @@ Steam:          https://store.steampowered.com/app/5114180/
 開発者
 ================================================================
 
-Bento Games。日本の会社員が、仕事のあとに一人でゲームを作っています。
+日本の会社員が、仕事のあとに一人でゲームを作っています。
 光のゲームを作っているのに、作業する時間はいつも真夜中です。
 
 ================================================================
